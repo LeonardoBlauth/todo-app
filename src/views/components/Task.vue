@@ -38,7 +38,7 @@ export default {
   methods: {
     changeState() {
       this.$api.put('/api/task/' + this.task.id + '/toggle-completed', {
-        task: parseInt(this.task.completed) ? 0 : 1,
+        task: this.task
       })
       .then(() => {
         this.$emit('taskChanged');

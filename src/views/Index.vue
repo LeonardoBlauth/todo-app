@@ -46,9 +46,6 @@ export default {
       const total = this.tasks.length;
       const completed = this.tasks;
 
-      console.log(total);
-      console.log(this.tasks);
-
       return Math.round((completed / total) * 100) || 0;
     },
   },
