@@ -1,10 +1,13 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-8 offset-2 tasksProgress rounded-pill" v-show="progress != 0">
+      <div class="col tasksProgress rounded-pill" v-show="progress != 0">
         <span class="progressValue">{{ progress }}%</span>
 
-        <div class="progressBar rounded-pill" :class="changeColor" :style="{ width: progress + '%' }"></div>
+        <div
+          class="progressBar rounded-pill"
+          :style="{ width: progress + '%' }"
+        ></div>
       </div>
     </div>
   </div>
@@ -18,15 +21,6 @@ export default {
       default: 0,
     },
   },
-  computed: {
-    changeColor() {
-      if (this.progress >= 80) {
-        return 'progressDone'
-      } else {
-        return 'progressBar'
-      }
-    }
-  }
 };
 </script>
 
@@ -53,14 +47,10 @@ export default {
 
   height: 100%;
 
-  background-color: #f0f015;
+  background-color: #198754;
   border-radius: 8px;
 
   align-self: flex-start;
-}
-
-.progressDone {
-  background-color: #198754;
 }
 
 .progressValue {
