@@ -4,14 +4,14 @@
       <input
         v-model="data.task"
         @keydown.enter="add"
-        class="form-control"
+        class="form-control border border-dark rounded-pill"
         type="text"
         placeholder="What do you need to do?"
       />
     </div>
 
     <div class="col-1 d-grid">
-      <button @click="add" class="btn btn-success"><EvaIcon name="plus" fill="#2c3e50" animation="pulse" /></button>
+      <button @click="add" class="btn btn-success border border-dark rounded-pill"><EvaIcon name="plus" fill="#2c3e50" animation="pulse" /></button>
     </div>
   </div>
 </template>
@@ -35,14 +35,14 @@ export default {
 
       if (id) {
         this.$api.put('api/task/' + id, {
-          task: {task}
+          task: task
         }).then(() => {
           this.reset()
           this.$emit('reloadList');
         })
       } else {
         this.$api.post('api/task/store/', {
-          task: {task}
+          task: task
         }).then(() => {
           this.reset()
           this.$emit('reloadList');

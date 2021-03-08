@@ -44,7 +44,7 @@ export default {
     },
     progress() {
       const total = this.tasks.length;
-      const completed = this.tasks;
+      const completed = this.tasks.filter(task => task.completed).length;
 
       return Math.round((completed / total) * 100) || 0;
     },

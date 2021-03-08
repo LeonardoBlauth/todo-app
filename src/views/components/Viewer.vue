@@ -1,17 +1,17 @@
 <template>
     <div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="all" checked v-model="filter" />
+            <input class="form-check-input border border-dark" type="radio" name="inlineRadioOptions" value="all" checked v-model="filter" />
             <label class="form-check-label" for="all">All</label>
         </div>
 
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="active" v-model="filter" />
+            <input class="form-check-input border border-dark" type="radio" name="inlineRadioOptions" value="active" v-model="filter" />
             <label class="form-check-label" for="active">Active</label>
         </div>
 
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="completed" v-model="filter" />
+            <input class="form-check-input border border-dark" type="radio" name="inlineRadioOptions" value="completed" v-model="filter" />
             <label class="form-check-label" for="completed">Completed</label>
         </div>
 

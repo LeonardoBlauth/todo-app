@@ -1,8 +1,12 @@
 <template>
-  <div class="container mt-5 tasksProgress" v-show="progress != 0">
-    <span class="progressValue">{{ progress }}%</span>
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2 tasksProgress rounded-pill" v-show="progress != 0">
+        <span class="progressValue">{{ progress }}%</span>
 
-    <div class="progressBar" :class="changeColor" :style="{ width: progress + '%' }"></div>
+        <div class="progressBar rounded-pill" :class="changeColor" :style="{ width: progress + '%' }"></div>
+      </div>
+    </div>
   </div>
 </template>
 
