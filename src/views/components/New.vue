@@ -1,6 +1,6 @@
 <template>
   <div class="row my-5">
-    <div class="col-5 offset-3">
+    <div class="col-8 offset-1">
       <input
         v-model="data.task"
         @keydown.enter="add"
@@ -10,7 +10,7 @@
       />
     </div>
 
-    <div class="col-1 d-grid">
+    <div class="col-1 offset-1 d-grid">
       <button @click="add" class="btn border border-dark rounded-pill">
         <EvaIcon name="plus" fill="#000" animation="pulse" />
       </button>
