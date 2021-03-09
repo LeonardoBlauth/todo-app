@@ -2,7 +2,7 @@
   <div>
     <div class="form-check form-check-inline">
       <input
-        class="form-check-input"
+        class="form-check-input border border dark"
         type="radio"
         name="inlineRadioOptions"
         value="all"
@@ -14,7 +14,7 @@
 
     <div class="form-check form-check-inline">
       <input
-        class="form-check-input"
+        class="form-check-input border border-dark"
         type="radio"
         name="inlineRadioOptions"
         value="active"
@@ -25,7 +25,7 @@
 
     <div class="form-check form-check-inline">
       <input
-        class="form-check-input"
+        class="form-check-input border border-dark"
         type="radio"
         name="inlineRadioOptions"
         value="completed"
