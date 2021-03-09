@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <h1 class="text-uppercase fw-bold">To Do List</h1>
     <New :task="task" @reloadList="getList()" />
     <Viewer :tasks="tasks" @edit="edit" @reloadList="getList()" />

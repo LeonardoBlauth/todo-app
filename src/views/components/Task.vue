@@ -1,9 +1,8 @@
 <template>
   <div class="container">
-    <div class="row d-flex align-items-center py-1 mb-2 bg-white">
-      <div class="col-9 text-start">
+    <div class="row d-flex align-items-center bg-white">
+      <div class="col-9 text-start division py-4" :class="completedClass">
         {{ task.task }}
-        <div class="division"></div>
       </div>
 
       <div class="col-1">
@@ -32,7 +31,7 @@
 
 <script>
 export default {
-  props: ["task"],
+  props: ["tasks","task"],
   methods: {
     changeState() {
       this.$api.put("/api/task/" + this.task.id + "/toogle").then(() => {
@@ -48,13 +47,25 @@ export default {
       });
     },
   },
+  computed: {
+    completedClass() {
+      if (this.task.completed) {
+        return 'completedClass'
+      } else {
+        return ''
+      }
+    }
+  }
 };
 </script>
 
 <style>
+.completedClass {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
 .division {
-  width: 100%;
-  height: 20px;
   border-bottom: 1px solid #adb5bd;
 }
 </style>

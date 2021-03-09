@@ -1,15 +1,11 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col tasksProgress rounded-pill" v-show="progress != 0">
-        <span class="progressValue">{{ progress }}%</span>
+  <div class="col-12 mt-5 tasksProgress rounded-pill" v-show="progress != 0">
+    <span class="progressValue">{{ progress }}%</span>
 
-        <div
-          class="progressBar rounded-pill"
-          :style="{ width: progress + '%' }"
-        ></div>
-      </div>
-    </div>
+    <div
+      class="progressBar rounded-pill"
+      :style="{ width: progress + '%' }"
+    ></div>
   </div>
 </template>
 

@@ -34,8 +34,8 @@
       <label class="form-check-label" for="completed">Completed</label>
     </div>
 
-    <div class="my-4" v-for="(task, index) in filteredTasks" :key="index">
-      <Task :task="task" @edit="edit" @taskChanged="$emit('reloadList')" />
+    <div v-for="(task, index) in filteredTasks" :key="index">
+      <Task :tasks="tasks" :task="task" @edit="edit" @taskChanged="$emit('reloadList')" />
     </div>
   </div>
 </template>
