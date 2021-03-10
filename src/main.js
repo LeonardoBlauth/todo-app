@@ -7,8 +7,10 @@ Vue.config.productionTip = false
 
 import 'bootstrap/dist/css/bootstrap.css'
 import EvaIcons from 'vue-eva-icons'
+import Notifications from 'vue-notification'
 
 Vue.use(EvaIcons)
+Vue.use(Notifications)
 
 const $api = axios.create({
   baseURL: 'http://localhost:8000/',

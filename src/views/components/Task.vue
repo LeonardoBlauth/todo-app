@@ -34,7 +34,8 @@ export default {
   props: ["tasks","task"],
   methods: {
     changeState() {
-      this.$api.put("/api/task/" + this.task.id + "/toogle").then(() => {
+      this.$api.put("/api/task/" + this.task.id + "/toogle")
+      .then(() => {
         this.$emit("taskChanged");
       });
     },
@@ -43,8 +44,26 @@ export default {
     },
     remove() {
       this.$api.delete("/api/task/" + this.task.id).then(() => {
-        this.$emit("taskChanged");
-      });
+        this.$emit("taskChanged")
+      })
+      .then(() => {
+        this.$notify({
+          group: 'foo',
+          title: 'Success',
+          text: "Task successfully deleted!",
+          type: 'success',
+        });
+      })
+      .catch (error => {
+        if (error.message === 'Request failed with status code 403') {
+          this.$notify({
+            group: 'foo',
+            title: 'Warning',
+            text: "You can't delete an incompleted task!",
+            type: 'warn',
+          })
+        }
+      })
     },
   },
   computed: {

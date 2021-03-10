@@ -41,18 +41,67 @@ export default {
             task: task,
           })
           .then(() => {
+            this.$notify({
+              group: 'foo',
+              title: 'Success',
+              text: "Task successfully edited!",
+              type: 'success',
+            });
             this.reset();
             this.$emit("reloadList");
-          });
+          })
+          .catch(error => {
+            if (error.message === 'Request failed with status code 403') {
+              this.$notify({
+                group: 'foo',
+                title: 'Warning',
+                text: "You can't edit a completed task, unless it has the tag (edit)!",
+                type: 'warn',
+              })
+              this.reset();
+            } else if (error.message === 'Request failed with status code 422') {
+              this.$notify({
+                group: 'foo',
+                title: 'Warning',
+                text: 'This task already exists!',
+                type: 'warn',
+              })
+              this.reset();
+            }
+          })
       } else {
         this.$api
           .post("api/task/store/", {
             task: task,
           })
           .then(() => {
+            this.$notify({
+              group: 'foo',
+              title: 'Success',
+              text: "Task successfully added!",
+              type: 'success',
+            });
             this.reset();
             this.$emit("reloadList");
-          });
+          })
+          .catch (error => {
+            if (error.message === 'Request failed with status code 422') {
+              this.$notify({
+                group: 'foo',
+                title: 'Warning',
+                text: 'This task already exists!',
+                type: 'warn',
+              })
+              this.reset();
+            } else if (error.message === 'Request failed with status code 403') {
+              this.$notify({
+                group: 'foo',
+                title: 'Warning',
+                text: 'There can be a maximun of 5 incompleted tasks to add a new task!',
+                type: 'warn',
+              });
+            }
+          })
       }
     },
     reset() {
