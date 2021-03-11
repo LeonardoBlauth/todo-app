@@ -44,13 +44,13 @@ export default {
     },
     remove() {
       this.$api.delete("/api/task/" + this.task.id).then(() => {
-        this.$emit("taskChanged")
+        this.$emit("taskChanged") 
       })
       .then(() => {
         this.$notify({
           group: 'foo',
-          title: 'Success',
-          text: "Task successfully deleted!",
+          title: '<h5 class="text-light fw-bold">Success</h5>',
+          text: "<p class='text-center text-light'>Task successfully deleted!</p>",
           type: 'success',
         });
       })
@@ -58,8 +58,8 @@ export default {
         if (error.message === 'Request failed with status code 403') {
           this.$notify({
             group: 'foo',
-            title: 'Warning',
-            text: "You can't delete an incompleted task!",
+            title: '<h5 class="text-light fw-bold">Warning</h5>',
+            text: "<p class='text-center text-light'>You can't delete an incompleted task!</p>",
             type: 'warn',
           })
         }

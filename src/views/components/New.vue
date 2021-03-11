@@ -43,8 +43,8 @@ export default {
           .then(() => {
             this.$notify({
               group: 'foo',
-              title: 'Success',
-              text: "Task successfully edited!",
+              title: '<h5 class="text-light fw-bold">Success</h5>',
+              text: "<p class='text-light text-center'>Task successfully edited!</p>",
               type: 'success',
             });
             this.reset();
@@ -54,16 +54,16 @@ export default {
             if (error.message === 'Request failed with status code 403') {
               this.$notify({
                 group: 'foo',
-                title: 'Warning',
-                text: "You can't edit a completed task, unless it has the tag (edit)!",
+                title: '<h5 class="text-light fw-bold">Warning</h5>',
+                text: "<p class='text-light text-center'>You can't edit a completed task, unless it has the tag (edit)!</p>",
                 type: 'warn',
               })
               this.reset();
             } else if (error.message === 'Request failed with status code 422') {
               this.$notify({
                 group: 'foo',
-                title: 'Warning',
-                text: 'This task already exists!',
+                title: '<h5 class="text-light fw-bold">Warning</h5>',
+                text: '<p class="text-light text-center">This task already exists!</p>',
                 type: 'warn',
               })
               this.reset();
@@ -77,8 +77,8 @@ export default {
           .then(() => {
             this.$notify({
               group: 'foo',
-              title: 'Success',
-              text: "Task successfully added!",
+              title: '<h5 class="text-light fw-bold">Success</h5>',
+              text: "<p class='text-light text-center'>Task successfully added!</p>",
               type: 'success',
             });
             this.reset();
@@ -88,16 +88,16 @@ export default {
             if (error.message === 'Request failed with status code 422') {
               this.$notify({
                 group: 'foo',
-                title: 'Warning',
-                text: 'This task already exists!',
+                title: '<h5 class="text-light fw-bold">Warning</h5>',
+                text: '<p class="text-light text-center">This task already exists!</p>',
                 type: 'warn',
               })
               this.reset();
             } else if (error.message === 'Request failed with status code 403') {
               this.$notify({
                 group: 'foo',
-                title: 'Warning',
-                text: 'There can be a maximun of 5 incompleted tasks to add a new task!',
+                title: '<h5 class="text-light fw-bold">Warning</h5>',
+                text: '<p class="text-light text-center">There can be a maximun of 5 incompleted tasks to add a new task!</p>',
                 type: 'warn',
               });
             }
