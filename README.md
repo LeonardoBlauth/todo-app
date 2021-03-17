@@ -1,6 +1,6 @@
 ## Description
 
-An APP for recording, editing and completing tasks with a progress bar
+An APP for recording, editing and completing tasks
 
 ## Technologies
 
