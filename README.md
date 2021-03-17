@@ -1,4 +1,17 @@
-# todo
+# Todo
+
+## Description
+
+An APP for recording, editing and completing tasks with a progress bar
+
+## Technologies
+
+- Vue CLI
+- Vue Router
+
+## Layout
+![Todo](https://i.imgur.com/j9Ls9ym.png)
+![Todo-tasks](https://i.imgur.com/SufPz3B.png)
 
 ## Project setup
 ```
